@@ -1,9 +1,11 @@
 class WordClock:
     def stringify(self, time):
         stringified = "it is "
-        stringified += str(time.hour) + " "
-        if time.minute != 0:
-            pass
+
+        if time.minute in [59]:
+            stringified += str(time.hour + 1) + " " + "o'clock"
+        if time.minute in [0]:
+            stringified += str(time.hour) + " " + "o'clock"
         else:
-            stringified += "o'clock"
+            pass
         return stringified

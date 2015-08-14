@@ -10,5 +10,8 @@ class WordClockTest(unittest.TestCase):
     def testNoon(self):
         self.assertEquals(self.wordclock.stringify(datetime.time(12, 0, 0)), "it is 12 o'clock")
 
+    def testOneMinuteToFullHour(self):
+        self.assertEquals(self.wordclock.stringify(datetime.time(11, 59, 0)), "it is 12 o'clock")
+
 if __name__ == '__main__':
     unittest.main()
